@@ -44,8 +44,6 @@ class _HomeState extends State<Home> {
       }else if(imc >= 40){
         _infoText = "Obesidade Grau 3 (${imc.toStringAsPrecision(4)})";
       }
-
-      print(_infoText);
     });
   }
 
