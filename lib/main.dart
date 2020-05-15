@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -25,7 +24,6 @@ class _HomeState extends State<Home> {
     heigthController.text = "";
     setState(() {
       _infoText = "Informe seus dados";
-      _formKey = GlobalKey<FormState>();
     });
   }
 
@@ -73,39 +71,37 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Icon(Icons.person_outline, size: 120.0, color: Colors.green),
                 TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        labelText: "Peso (kg)",
-                        labelStyle: TextStyle(color: Colors.green)),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
-                    controller: weightController,
-                    // ignore: missing_return
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Insira seu peso";
-                      }
-                    },
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(3),
-                    ]),
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      labelText: "Peso (kg)",
+                      labelStyle: TextStyle(color: Colors.green)),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.green, fontSize: 25.0),
+                  controller: weightController,
+                  // ignore: missing_return
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return "Insira seu peso";
+                    }
+                  },
+                  maxLength: 3,
+                ),
                 TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        labelText: "Altura (cm)",
-                        labelStyle: TextStyle(color: Colors.green)),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
-                    controller: heigthController,
-                    validator: (value) {
-                      // ignore: missing_return
-                      if (value.isEmpty) {
-                        return "Insira seu peso";
-                      }
-                    },
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(3),
-                    ]),
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      labelText: "Altura (cm)",
+                      labelStyle: TextStyle(color: Colors.green)),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.green, fontSize: 25.0),
+                  controller: heigthController,
+                  validator: (value) {
+                    // ignore: missing_return
+                    if (value.isEmpty) {
+                      return "Insira seu peso";
+                    }
+                  },
+                  maxLength: 3,
+                ),
                 Padding(
                   padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                   child: Container(
