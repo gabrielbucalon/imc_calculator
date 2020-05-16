@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                   validator: (value) {
                     // ignore: missing_return
                     if (value.isEmpty) {
-                      return "Insira seu peso";
+                      return "Insira sua altura";
                     }
                   },
                   maxLength: 3,
@@ -105,7 +105,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                   child: Container(
-                    height: 50.0,
+                    height: 100.0,
                     child: RaisedButton(
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
